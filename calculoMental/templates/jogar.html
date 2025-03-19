@@ -24,11 +24,17 @@
         {% csrf_token %}
            <input type="hidden" name="resposta" id="resposta" value="{{resposta}}">
             <input type="hidden" name="acertouErrou" value="neutro" id="acertouErrou">
+          
             <div class="dibBtns">                
+
            
                 <input class="btn btn-success botao" id="acertou" type="submit" value="Acertou">
                 <input class="btn btn-danger botao" id="errou" type="submit" value="Errou">
             </div>
+            <div class="containerBtnRespsota">
+                <div  id="btnResposta" class="btnResposta btn">resposta</div>
+            </div>
+        
         </form>
         <button class="finalizar">
             <a href="{% url 'finalizar' partidaId %}">finzalizar jogo</a>
@@ -48,7 +54,11 @@
     btnErrou.addEventListener('click', ()=> {
         inputAcertouErro.value = 'errou'
     })    
-
+    document.getElementById('btnResposta').addEventListener('click', () =>{
+        document.getElementById('btnResposta').innerText = document.getElementById('resposta').value
+          document.getElementById('btnResposta').style.backgroundColor = '#4d5ccc'
+    })
+    
         
     
     

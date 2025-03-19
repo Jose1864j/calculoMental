@@ -47,18 +47,17 @@ h1 {
 .botao{
 margin-top: 5px;
 cursor: not-allowed;
-
 width: 8vw;
 
 }
-
-#btnEnviar{
-    display: none;
-    width: 20vw;
-    height: 5vh;
+.containerBtnRespsota{
+    display: flex;
+    justify-content: center;
 }
-.botaoEnviar{
+.btnResposta{
     margin-top: 2vh;
+    background-color: #9c4dcc;
+    width: 80%;
 }
 
 .finalizar{
