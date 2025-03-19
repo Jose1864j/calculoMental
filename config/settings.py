@@ -146,7 +146,7 @@ MENU_VALORES = ["Soma", "Subtração","Multiplicação","Divisão","Porcentagens
 SUB_MENU_VALORES = [
         ["Soma unidades da 0", "Dezena + Dezena", "Centena + dezena",  "Centenas somadas é zero", "Centenas múltiplas de 100", "Terminação 5", "Aleatório"],
         ["Segundo fator é maior", "Dezenas", "Centenas em que a dezena do primeiro número é maior", "Centenas que dezena do segundo não é maior", "Aleatório"],
-        ["Multiplicação  por três", "Multiplicação por quatro", "Multiplicação por cinco", "Multiplicação 3-10 com nº terminados em cinco","Por dezenas" "Por unidade", "Aleatório"],
+        ["Multiplicação  por três", "Multiplicação por quatro", "Multiplicação por cinco", "Multiplicação por 11", "Multiplicação 3-10 com nº terminados em cinco","Por dezenas" "Por unidade", "Aleatório"],
         ["Divisão por dois", "Divisão por quatro",  "Divisão por cinco", "Aleatório"],
         ["Múltiplos da porcentagem", "Porcentagem de pares", "Porcentagem aleatória", "Aleatório"], 
         ["Raiz de 2-10", "Raizes notaveis" ]

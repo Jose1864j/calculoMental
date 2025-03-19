@@ -47,6 +47,7 @@ h1 {
 .botao{
 margin-top: 5px;
 cursor: not-allowed;
+pointer-events: none;
 width: 8vw;
 
 }

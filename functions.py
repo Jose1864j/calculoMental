@@ -179,13 +179,16 @@ def multiplicacao(op ='aleatorio') :
     elif op == 2:
         num2 = 5
 
-    elif op == 3: 
+            
+    elif op == 3:
+        num =num_aleat(randint(2,3))
+        num2 = 11
+    elif op == 4: 
         num = str(num_aleat(1,0,1))  + '5'  #1,0,1  para que o valor  da unidade (que no caso vai ser o valor da dezena), não retornae 0
         num2  = randint(3,10)
-        
-    elif op == 4:
+    elif op == 5:
         num2 = str(randint(2,9)) + '0'
-    elif op ==5:
+    elif op ==6:
         num2 = randint(2,9)
 
     num = int(num)

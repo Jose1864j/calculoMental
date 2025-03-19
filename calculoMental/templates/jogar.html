@@ -50,6 +50,7 @@
 
     btnAcertou.addEventListener('click', () => {
   inputAcertouErro.value = 'acertou';
+
 });    
     btnErrou.addEventListener('click', ()=> {
         inputAcertouErro.value = 'errou'
@@ -57,6 +58,9 @@
     document.getElementById('btnResposta').addEventListener('click', () =>{
         document.getElementById('btnResposta').innerText = document.getElementById('resposta').value
           document.getElementById('btnResposta').style.backgroundColor = '#4d5ccc'
+        btnAcertou.style.pointerEvents ='auto';
+        btnErrou.style.pointerEvents = 'auto'
+
     })
     
         
