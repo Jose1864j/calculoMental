@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historico</title>
+    <link rel="stylesheet" href="{% static 'historico.css'%}">
+
+</head>
+<body>
+
+    
+      <div class="body">
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tipo</th>
+                    <th>Acertos</th>
+                    <th>Erros</th>
+                    <th>Totais</th>
+                    
+                    
+                </tr>
+            </thead>
+            <tbody>
+            {% if partidas%}
+
+            {% for p in partidas %}
+            <tr>
+                <td>{{p.id}}</td>
+                
+                <td>{{p.tipo}} - {{p.op1}} {{p.op2}}</td>
+                <td>{{p.acertos}}</td>
+                <td>{{p.erros}}</td>
+                <td>{{p.totais}}</td>
+            </tr>
+
+       
+   
+    
+    {% endfor %}
+    {%else%}
+       <td colspan="5""> <div >NENHUMA PARTIDA ENCONTRADA</div></td>
+            {%endif%}
+    </tbody>
+    </table>
+    <div class="organizar">
+        <div class="filter">
+            <h2>Filtrar:</h2>
+            <form action="{%url 'filter' 'historico'%}" method="POST">
+                {% csrf_token %}
+      
+                <select name="filtrarPeloQ" id="filtrarPeloQ" required>
+                    {% for i in itensMenu%}
+                        <option value="{{i}}">{{i}}</option>
+                    {%endfor%}
+                </select>
+                <br>
+                <input type="submit" name="" id="" class="submite" value="filtrar">
+            </form>
+        </div>
+        <div class="orderBy">
+            <h2>Ordenar:</h2>
+            <form action="{% url 'ordenar' 'historico' %}" method="POST">
+                {% csrf_token %}
+      
+           
+            <input type="radio"  name="ordens"  id="tempo" value="tempo">
+            <label for="tempo">Tempo</label>
+            
+            <input type="radio"  name="ordens"  id="porcentagems" value="porcentagem">
+            <label for="porcentagem">Porcentagem</label>
+            <br>
+            <input type="radio"  name="tipodeOrdenamento"  id="crescente" value="crescente" checked>
+            <label for="crescente">Crescente</label>
+            <input type="radio"  name="tipodeOrdenamento"  id="decrescente" value="decrescente">
+            <label for="decrescente">Decrescente</label>
+            <br>
+            <input type="submit" name="" id="" class="submite" value="Ordenar">
+            </form>
+        </div>
+    </div>
+      </div>
+ 
+</body>
+</html>

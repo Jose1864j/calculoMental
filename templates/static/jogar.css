@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    border: 0;
+
+}
+
+body {
+    background-color: rgb(37, 68, 69);
+
+}
+
+h1 {
+    text-align: center;
+    font-size: 5rem;
+}
+
+.jogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    height: 50vh;
+}
+
+.equacion {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 25vh;
+    font-size: 3rem;
+    color: white;
+
+}
+.respostaUsuario{
+    height: 5vh;
+    width: 30vw;
+}
+.divBtnEnviar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.enviarBtn{
+    margin: 1vh;
+    height: 4vh;
+    width: 20vw;
+   
+}
+.botao{
+margin-top: 5px;
+cursor: not-allowed;
+pointer-events: none;
+width: 8vw;
+display: none;
+
+}
+
+#btnEnviar{
+    display: none;
+    width: 20vw;
+    height: 5vh;
+}
+.botaoEnviar{
+    margin-top: 2vh;
+}
+
+.finalizar{
+    margin: auto;
+    width: 15vw;
+    margin-top: 1vh;
+    background-color: black;
+  
+}
+.finalizar a{
+    color: white;
+    text-decoration: none;
+}
+#btnMostraResposta{
+    width: 20vw;
+    height: 5vh;
+ 
+}

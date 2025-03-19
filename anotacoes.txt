@@ -1,0 +1,17 @@
+Parei na parte de começar a jogar caso tenha um número válido, agorea tem que corrigir aquele mundo de ufnção
+Corrigir a multiplicação de treinar tabiada tem muitos valores fáceis, não quero isso
+multiplicação por 8 e por 6 não precisa de por 2  ou 3 por que quando fgaz a de 8 e 6 já faz a de dois e 3 para chegar mais rápido
+
+
+TA FALTANDO TERMINAR DE FAZER A PARTE DE VERIIFCÇAÃO E AJEITAR O CSS
+FAZER SOMA DE SOMAR 3 COISAS  PQ VC TA ERRANDO DE MAIS
+mulriplicação por 11
+cronometrar o tempo
+
+temrianr ordanemtnto por porcentagem /tempo
+
+ao escolehr o modo geral aparecer o sub-menu também.
+Tirar divisão por 10 (não é útil)
+talvez seja melhor você mesmo dizer  a resposta e tirar o input(ai você avalia se a respsota esta certa ou não, issso irioa garanatir além de agilidade, o calculo realmente ser mental - e não ter aucílio do input para anotar as coisa)
+
+colcoar quantidade de erros / acertos ao lado do jogo(pelo menos enquanto ta na fase teste, a fim de ver se ta contando certo))

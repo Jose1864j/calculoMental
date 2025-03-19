@@ -1,0 +1,55 @@
+body{
+    background-color: rgb(102, 142, 118);
+    color: rgb(0, 0, 0);
+}
+
+table{
+    
+    border: 1px solid white;
+
+}
+th{
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+}
+td,th,tr{
+    border: 0.5px solid white;
+}
+
+.body{
+    display: flex;
+  
+    
+}
+.organizar{
+    margin-top: 15vh;
+    margin-right: 15vh;
+    position: fixed;
+    right: 10px;
+    border: 1px solid white;
+    background-color: rgb(91, 131, 107);  
+}
+.orderBy{
+    margin-top: 3.5vh;
+
+}
+
+.filter, .orderBy{
+ 
+
+ padding: 10px;
+ width: 20vw;
+}
+
+
+#filtrarPeloQ{
+ width: 90%; 
+ height: 4vh;
+
+}
+.submite{
+    margin-top: 2vh;
+    height: 5vh;
+    width: 90%;
+}

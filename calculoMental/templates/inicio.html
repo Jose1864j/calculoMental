@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Começo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'menu/style.css' %}">
+    <link rel="stylesheet" href="{% static 'menu.css'%}">
+    <style>
+   
+    </style>
+</head>
+<body class="inicio menu">
+    <h1><a href="{% url 'irPara' 'menuEspecifico' %}">ESPECÍFICO</a></h1>
+    <h1><a  href="{% url 'irPara' 'menuGeral' %}">GERAL</a></h1>
+    <h1><a href="{% url 'irPara' 'historico'%}">HISTÓRICO</a></h1>
+    
+</body>
+</html>
