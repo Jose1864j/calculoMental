@@ -22,18 +22,12 @@
         <form action="" method="POST" id="meuForm">
               
         {% csrf_token %}
-            <div>
-                <input class="respostaUsuario" type="text" name="respostaUsuario"  id="respostaUsuario"  autofocus required>
-            </div>
-
-            <input type="hidden" name="resposta" id="resposta" value="{{resposta}}">
-
-            <div class="divBtnEnviar">
-                <input class="botaoEnviar" id="btnMostraResposta" type="submit" value="mostrar">
-                
-                <input  class="botaoEnviar" class="enviarBtn" id="btnEnviar" type="submit" value="enviar">
-                <div class="btn btn-success botao" id="certo">Acertou!</div>
-                <div class="btn btn-danger botao " id="errado">Errou!</div>
+           <input type="hidden" name="resposta" id="resposta" value="{{resposta}}">
+            <input type="hidden" name="acertouErrou" value="neutro" id="acertouErrou">
+            <div class="dibBtns">                
+           
+                <input class="btn btn-success botao" id="acertou" type="submit" value="Acertou">
+                <input class="btn btn-danger botao" id="errou" type="submit" value="Errou">
             </div>
         </form>
         <button class="finalizar">
@@ -44,45 +38,19 @@
 </body>
 
 <script>
-    let form =  document.getElementById('meuForm')
-    let btnEnviar =  document.getElementById('btnEnviar')
+    let btnAcertou = document.getElementById('acertou')    
+    let btnErrou = document.getElementById('errou')
+    let inputAcertouErro = document.getElementById('acertouErrou')
+
+    btnAcertou.addEventListener('click', () => {
+  inputAcertouErro.value = 'acertou';
+});    
+    btnErrou.addEventListener('click', ()=> {
+        inputAcertouErro.value = 'errou'
+    })    
+
+        
     
-   
-    form.addEventListener('submit', function(event){
-      
-        event.preventDefault()
-        let respostaUsuario = document.getElementById('respostaUsuario')
-        
-        let resposta = document.getElementById('resposta')
-        if ((respostaUsuario.value).trim() == (resposta.value).trim()){
-            document.getElementById('certo').style.display = 'inline'
-        }
-        else{
-             document.getElementById('errado').style.display = 'inline'
-             let elemento = document.createElement('h2')
-             elemento.innerText = resposta.value
-             document.querySelector('.divBtnEnviar').appendChild(elemento)
-             
-        }
-        let btnEnviar  = document.getElementById('btnEnviar')
-        btnEnviar.style.display = 'inline'
-        btnMostraResposta.style.display = 'none'
-          
-      
     
-      
-      
-       
-    })
-    btnEnviar.addEventListener('click', function(){
-        
-        form.submit()
-    })
-    document.addEventListener("keypress", function(event) {
-        
-    if (event.key === "Enter" && btnEnviar.style.display == 'inline') { // Verifica se a tecla pressionada é "Enter"
-        form.submit()
-    }
-});   
 </script>
 </html>

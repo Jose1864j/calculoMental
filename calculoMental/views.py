@@ -21,11 +21,10 @@ def jogar(request, idPartida):
             op1.append(i)
         
     if request.method == 'POST': #ja ta jogando
-       respostaCerta = request.POST.get('resposta')
-       respostaUsuario = request.POST.get('respostaUsuario')
-       respostaUsuario = " ".join(respostaUsuario.split())
-       print(f'Respsota usuario: {respostaUsuario}- respostaCerta {respostaCerta}.')
-       if respostaCerta == respostaUsuario:
+       resposta = request.POST.get('acertouErrou')
+       print(resposta)
+       resposta = True if resposta.lower() == 'acertou' else False
+       if resposta:
           partida.acertos+=1
           partida.totais+=1
 
