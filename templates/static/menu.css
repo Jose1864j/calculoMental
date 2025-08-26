@@ -83,3 +83,16 @@ form{
 .divCheckBoxGeral{
     font-size: 30px;
 }
+
+
+.btnVoltar {
+    margin-left: 1vw;
+}
+.btnVoltar  >a{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    color: black;
+    text-decoration: none;
+
+}

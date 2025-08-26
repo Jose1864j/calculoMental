@@ -11,9 +11,11 @@ def jogar(request, idPartida):
         tipo = partida.tipo
         op1 = partida.op1
         op2 = partida.op2
+       
     except:
         didivido  =  idPartida.split('|')
         partida = Partida.objects.get(id=int(didivido[0]))
+        partida.numero = Partida.objects.all().count()
         op1 = []
         listaOpcoes = didivido[1].split(',')
         tipo = partida.tipo
@@ -36,7 +38,7 @@ def jogar(request, idPartida):
     elif tipo == 'especifico':
        
         valores = comecarGame('especifico', op1,op2)
-        
+        print(f'Valor{op1} -  op2 = {op2} ')
         if len(valores) == 3:
             v1, sinal, res = valores
             v2 = ''
@@ -77,21 +79,36 @@ def verificaResposta(request):
     
 
 def finalizar(request, id):
-    partida = Partida.objects.get(id=id)
+    
+    if request.method == 'POST':
+        btn = request.POST.get('btn')
+        if btn == 'voltar':
+            partida = Partida.objects.get(id=id)
+            partida.delete()
+        
+        
+        return redirect('inicio')
+            
 
+    else:
+        partida = Partida.objects.get(id=id)
 
     return render(request,'resultado.html', {'acertos':partida.acertos, 'erros':(partida.totais - partida.acertos), 'total': partida.totais})
 
 
-def historico(request, indiceFiltrar = None, comoOrdenar  = None):
+def historico(request, indiceFiltrar = None, comoOrdenar  = None, filtrar = None):
     partidas = Partida.objects.all()
     menu =settings.MENU_VALORES
     listaSub =settings.SUB_MENU_VALORES
   
-    if indiceFiltrar != None and indiceFiltrar != 'None':
-        indiceFiltrar = int(indiceFiltrar)
-        partidas = Partida.objects.filter(op1=indiceFiltrar +1) # + 1 pq estamos começando no 1 a contagem aoa adicionar op1 e op2
-    if comoOrdenar !=None and comoOrdenar != 'None':
+    if filtrar:
+        if indiceFiltrar == 'todos':
+            pass
+        elif indiceFiltrar == 'geral':
+            partidas = Partida.objects.filter(tipo='geral') 
+        else:
+            indiceFiltrar = int(indiceFiltrar)
+            partidas = Partida.objects.filter(op1=indiceFiltrar +1, tipo='especifico') # + 1 pq estamos começando no 1 a contagem aoa adicionar op1 e op2
         if comoOrdenar == 'crescente':
             partidas = partidas.order_by('id')
         else:
@@ -121,18 +138,12 @@ def filtrar(request, oQue):
          if oQue == 'historico':
               menu =settings.MENU_VALORES
               filtrarPeloMenu = request.POST.get('filtrarPeloQ')
-              indice = menu.index(filtrarPeloMenu)
-              
-              return redirect('historicoFiltradoOdenador', indice,None) #redireciona par aurl com esse nome
+              try:
+                indice = menu.index(filtrarPeloMenu)
+              except:
+                indice = 'todos'
+              rescenteEDecrescente  = request.POST.get('tipodeOrdenamento').lower()
+              return redirect('historicoFiltradoOdenador', indice,rescenteEDecrescente, True) #redireciona par aurl com esse nome
 
-
-    return HttpResponse('método não é post')
-
-def ordenar(request, oQue):
-
-    if request.method =='POST':
-        if oQue =='historico':
-            crescenteEDecrescente  = request.POST.get('tipodeOrdenamento').lower()
-            return redirect('historicoFiltradoOdenador', None,  crescenteEDecrescente)
 
     return HttpResponse('método não é post')

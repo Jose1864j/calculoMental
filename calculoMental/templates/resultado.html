@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{% static 'resultado.css'%}">
 </head>
 
-<body>
+<body >
    <div>
     <div class="d-flex acertos">
         <h1>Acertos:</h1>
@@ -29,7 +29,17 @@
     </div>
 
     <div class="divBtn">
-        <button><a href="{% url 'irPara' 'inicio' %}">voltar para início</a> </button>
+     
+       <form action="" method="POST">
+         {% csrf_token %}
+            <button type="submit" name="btn" value="salvar">Salvar Partida</button>
+            
+       </form>
+       <form action="" method="POST">
+         {% csrf_token %}
+            <button type="submit" name="btn" value="voltar">Voltar  começo</button>
+            
+       </form>
     </div>
    </div>
 </body>

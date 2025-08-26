@@ -28,7 +28,9 @@ def loadMenu(request, qualMenu, valorDigitado = None):
                 partida  = Partida(
                  tipo='especifico',
                  op1=valorDigitado    
+
              )
+                partida.numero = Partida.objects.all().count()+ 1
                 partida.save()
                 
 
@@ -49,6 +51,9 @@ def loadMenu(request, qualMenu, valorDigitado = None):
             partida = Partida(
                 tipo='geral'
             )
+            partida.numero = Partida.objects.all().count()+ 1
+
+
             partida.save()
             dado = ''
             for i in dados_numericos:
@@ -67,6 +72,8 @@ def loadMenu(request, qualMenu, valorDigitado = None):
                  op1=int(request.POST.get('opcao1')),
                  op2=int( request.POST.get('input'))
              )
+             partida.numero = Partida.objects.all().count()+ 1
+
              partida.save()
              return  redirectGameIntermedium(request, partida.id)
         listaSub = settings.SUB_MENU_VALORES

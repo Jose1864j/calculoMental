@@ -153,7 +153,7 @@ def raiz(op = 'aleatorio' ):
                     }
         num= choice(list(dicionario.keys()))
         res = dicionario[num]
-    return num, sinal, res
+    return  sinal,num, res
 
 def quadrado():
     base = randint(11,30)
@@ -219,6 +219,9 @@ def divisao(op = 'aleatorio'):
         num2 = 4
     elif op == 2:
         num2 =5
+    else:
+        num2 = choice([2,4,5])
+    
     
     auxRes = str(num/num2).split('.')[1]
     valorATruncar = 2

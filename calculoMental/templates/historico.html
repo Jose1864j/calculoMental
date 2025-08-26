@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <link rel="stylesheet" href="{% static 'historico.css'%}">
 
 </head>
@@ -30,7 +32,7 @@
 
             {% for p in partidas %}
             <tr>
-                <td>{{p.id}}</td>
+                <td>{{p.numero}}</td>
                 
                 <td>{{p.tipo}} - {{p.op1}} {{p.op2}}</td>
                 <td>{{p.acertos}}</td>
@@ -43,7 +45,7 @@
     
     {% endfor %}
     {%else%}
-       <td colspan="5""> <div >NENHUMA PARTIDA ENCONTRADA</div></td>
+       <td colspan="5"> <div >NENHUMA PARTIDA ENCONTRADA</div></td>
             {%endif%}
     </tbody>
     </table>
@@ -54,19 +56,18 @@
                 {% csrf_token %}
       
                 <select name="filtrarPeloQ" id="filtrarPeloQ" required>
+                    <option value="todos" selected>Todos</option>
+
                     {% for i in itensMenu%}
                         <option value="{{i}}">{{i}}</option>
                     {%endfor%}
+                    
                 </select>
                 <br>
-                <input type="submit" name="" id="" class="submite" value="filtrar">
-            </form>
-        </div>
+               
+      
         <div class="orderBy">
             <h2>Ordenar:</h2>
-            <form action="{% url 'ordenar' 'historico' %}" method="POST">
-                {% csrf_token %}
-      
            
             <input type="radio"  name="ordens"  id="tempo" value="tempo">
             <label for="tempo">Tempo</label>
@@ -79,11 +80,14 @@
             <input type="radio"  name="tipodeOrdenamento"  id="decrescente" value="decrescente">
             <label for="decrescente">Decrescente</label>
             <br>
-            <input type="submit" name="" id="" class="submite" value="Ordenar">
+            <input type="submit" name="" id="" class="submite" value="filtrar">
             </form>
         </div>
     </div>
-      </div>
+</div>
+
+</div>
+<div class="voltarInicioHistorico mx-auto"><a href="{% url 'inicio' %}" class="btn btn-danger">Voltar início</a></div>
  
 </body>
 </html>

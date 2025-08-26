@@ -6,7 +6,7 @@ from calculoMental.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',redirectInicial ),
+    path('',redirectInicial, name='inicio' ),
     path('inicio/', loadInicio, name='loadInicio'),
     path('menu/<str:qualMenu>/', loadMenu, name='loadMenu'),
     path('menu/<str:qualMenu>/<int:valorDigitado>', loadMenu, name='loadMenu'),

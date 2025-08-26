@@ -1,10 +1,15 @@
+body,html{
+    height: 100vh;
+}
 body{
     background-color: rgb(102, 142, 118);
     color: rgb(0, 0, 0);
+    
 }
 
 table{
-    
+    margin: auto;
+    margin-top: 15vh;
     border: 1px solid white;
 
 }
@@ -19,13 +24,12 @@ td,th,tr{
 
 .body{
     display: flex;
-  
-    
+      
 }
 .organizar{
     margin-top: 15vh;
     margin-right: 15vh;
-    position: fixed;
+  
     right: 10px;
     border: 1px solid white;
     background-color: rgb(91, 131, 107);  
@@ -37,7 +41,6 @@ td,th,tr{
 
 .filter, .orderBy{
  
-
  padding: 10px;
  width: 20vw;
 }
@@ -52,4 +55,16 @@ td,th,tr{
     margin-top: 2vh;
     height: 5vh;
     width: 90%;
+}
+
+.voltarInicioHistorico{
+    height: 10vh;
+    width: 10vw;
+    margin: auto;
+    
+}
+
+.voltarInicioHistorico  a{
+       width: 10vw;
+    
 }

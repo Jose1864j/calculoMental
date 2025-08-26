@@ -57,19 +57,20 @@
 
     {% endif %}
         <div class="btns">
+
             <input  type="submit" class="submit btn" value="selecionar" >
-            
-            <button class="voltar btn " type="button" id="voltarBtn"><a href="{% url 'loadMenu' 'especifico' %}">voltar</a></button>
-            
-        </div> 
+            <div class="submit btn btnVoltar">
+                <a href="{% url 'inicio' %}" class="text-center">Voltar início</a>
+            </div>
+
+       
     </form>
   
     <script src="{%static 'menu.js'%}"></script>
     
     {%if qualMenu == 2%}
 
-    <script>
-     desOculta('voltarBtn')</script>
+ 
     {%endif%}
     
 </body>
